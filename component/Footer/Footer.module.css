@@ -1,0 +1,126 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(295deg, #7900E2 -15%, #500EA5 115%);
+}
+
+.figurefooter {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.footerbox {
+    color: #fff;
+    padding-top: 50px;
+    width: 80%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-transform: capitalize;
+}
+
+.footerhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.PTBSH {
+    font-weight: 500;
+    font-size: 24px;
+    text-align: end;
+}
+
+.footercontent {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.berosetudio {
+    width: 33.333333%;
+}
+
+.footercontent h4 {
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.footercontent h6 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.footercontent p,
+.footercontent a {
+    display: block;
+    font-size: 13px;
+    font-weight: 300;
+    text-decoration: none;
+    color: #fff;
+}
+
+.beroaddress {
+    display: flex;
+    justify-content: space-between;
+}
+
+.office {
+    width: 45%;
+}
+
+.getintouch {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    text-transform: lowercase;
+}
+
+.bgIcon {
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bgIcon svg {
+    margin: 5px;
+}
+
+.getintouch a {
+    padding-left: 10px;
+}
+
+.connect {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: max-content;
+}
+
+.connect:hover a {
+    text-decoration: underline;
+    font-weight: 500;
+}
+.company {
+    width: 25%;
+}
