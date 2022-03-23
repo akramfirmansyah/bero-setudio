@@ -18,12 +18,12 @@ import img006 from "../public/Jurnal/unsplash_6dW3xyQvcYE.png";
 export default function Jurnal() {
   // Variabel
   var jurnalCont = [
-    {id:1, link:'1', img:img001, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
-    {id:2, link:'2', img:img002, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
-    {id:3, link:'3', img:img003, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
-    {id:4, link:'4', img:img004, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
-    {id:5, link:'5', img:img005, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
-    {id:6, link:'6', img:img006, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'}
+    {id:1, link:'jurnal1', img:img001, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
+    {id:2, link:'jurnal2', img:img002, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
+    {id:3, link:'jurnal3', img:img003, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
+    {id:4, link:'jurnal4', img:img004, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
+    {id:5, link:'jurnal5', img:img005, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'},
+    {id:6, link:'jurnal6', img:img006, title:'Judul artikel ipsum', date:'15 Dec 2021', publish:'Alif pratama'}
   ]
 
   return (
