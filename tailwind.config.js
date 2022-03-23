@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         'primary': '#57209D',
         'second': '#E09E00',
+        'jurnal': '#1D1D1D',
         'phoneshadow': 'rgba(37, 179, 68, 0.3)',
       },
       dropShadow: {

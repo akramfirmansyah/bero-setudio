@@ -155,7 +155,7 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="/jurnal">
                     <a className="ml-[25px] capitalize">journals</a>
                   </Link>
                 </li>

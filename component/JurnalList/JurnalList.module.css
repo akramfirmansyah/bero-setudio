@@ -1,0 +1,38 @@
+.warpli {
+    width: 47%;
+    margin-bottom: 5em;
+}
+
+.linka {
+    width: 100%;
+    color: white;
+    text-transform: capitalize;
+}
+
+.linka:hover h3 {
+    text-decoration: underline;
+}
+
+.linka h3 {
+    font-size: 2em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.linka p {
+    display: inline;
+    font-weight: 300;
+}
+
+.linka p span {
+    font-weight: 600;
+}
+
+.containerImage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin-bottom: 1em;
+}
