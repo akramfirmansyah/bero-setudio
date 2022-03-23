@@ -2,6 +2,7 @@ import Image from "next/image";
 
 // Component
 import Navlogo from "../component/Navlogo/Navlogo";
+import Navbottom from "../component/Navbottom/Navbottom";
 import JurnalList from "../component/JurnalList/JurnalList";
 import Footer from "../component/Footer/Footer";
 
@@ -27,7 +28,12 @@ export default function Jurnal() {
 
   return (
     <div className=" relative bg-jurnal z-[1]">
+      
+      {/* Navbar Top */}
       <Navlogo class="fixed top-6 left-[10%] z-50" />
+
+      {/* Navbar Bottom */}
+      <Navbottom class="fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]" />
 
       {/* Background */}
       <div className=" absolute h-screen w-full overflow-hidden -z-[1]">
