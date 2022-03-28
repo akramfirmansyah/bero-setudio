@@ -140,17 +140,17 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="#service">
                     <a className="ml-[25px] capitalize">Service</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="#team">
                     <a className="ml-[25px] capitalize">our team</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="#work">
                     <a className="ml-[25px] capitalize">works</a>
                   </Link>
                 </li>
@@ -254,7 +254,7 @@ export default function Home() {
       </div>
 
       {/* Our Service */}
-      <div className="w-full flex justify-center text-primary">
+      <div id="service" className="w-full flex justify-center text-primary">
         <div className="w-4/5 mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
             our <span className="font-bold">service</span>
@@ -324,7 +324,7 @@ export default function Home() {
       </div>
 
       {/* Our Team */}
-      <div className="w-full flex justify-center text-primary">
+      <div id="team" className="w-full flex justify-center text-primary">
         <div className="w-4/5 mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
             our <span className="font-bold">team</span>
@@ -352,7 +352,7 @@ export default function Home() {
       </div>
 
       {/* Our Work */}
-      <div className="w-full flex justify-center text-primary">
+      <div id="work" className="w-full flex justify-center text-primary">
         <div className="w-4/5 mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
             our <span className="font-bold">work</span>

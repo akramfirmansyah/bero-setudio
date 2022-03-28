@@ -11,8 +11,8 @@ const OurWork = (props) => {
                   <div className={style.owimage} key={thumnail.id}>
                     <div className={style.zoomin}>
                       <figure>
-                        <div className='w-full aspect-square'>
-                          <Image src={thumnail.img} layout='fill' />
+                        <div className='w-full aspect-square relative'>
+                          <Image src={thumnail.img} layout='fill' priority />
                         </div>
                         <figcaption className={style.imgtext}>
                           <h4>{thumnail.title}</h4>
