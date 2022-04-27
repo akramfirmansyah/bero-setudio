@@ -359,7 +359,7 @@ export default function Home() {
           </h2>
           <OurWork thumnail={thumnail} />
           <button className="flex justify-center items-center rounded-full capitalize bg-[#7d06d8] text-white px-[30px] py-[5px] my-[70px] mx-auto transition-all hover:bg-primary">
-            <Link href="#">
+            <Link href="/jurnal/all-jurnal">
               <a className="text-xl font-bold">see more</a>
             </Link>
           </button>
