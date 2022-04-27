@@ -11,7 +11,7 @@ export default function Footer() {
     return (
       <div className={style.footer}>
         <figure className={style.figurefooter}>
-          <Image src={bgFooter} alt="Supergrafis ungu" layout="fill" raw='true' />
+          <Image src={bgFooter} alt="Supergrafis ungu" layout="fill" raw='true' priority />
         </figure>
         <div className={style.footerbox}>
           <div className={style.footerhead}>

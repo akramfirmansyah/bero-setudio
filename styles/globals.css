@@ -43,3 +43,8 @@ button.scrooltotop:hover svg:nth-child(1){
 button.scrooltotop:hover svg:nth-child(2){
   transform: translateY(-24px);
 }
+
+.prevnextport path {
+  stroke: white;
+  stroke-width: 3px;
+}

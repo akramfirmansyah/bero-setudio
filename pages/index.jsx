@@ -88,18 +88,18 @@ const team = [
 
 // Props Thumnail Our Work
 var thumnail = [
-  {id:1, img:TPasarSenyum, title:"Pasar Senyum", text:"Branding"},
-  {id:2, img:TArktiv, title:"Arktiv", text:"Branding"},
-  {id:3, img:TSenyumInd, title:"Senyum Ind", text:"Branding"},
-  {id:4, img:TBerokah, title:"Berokah", text:"Branding"},
-  {id:5, img:TCifo, title:"CIFO", text:"Branding"},
-  {id:6, img:TDaf, title:"DAF", text:"Branding"},
-  {id:7, img:TRas, title:"RAS", text:"Branding"},
-  {id:8, img:TBlank, title:"_Blank", text:"Lorem Epsum"},
-  {id:9, img:TBlank, title:"_Blank", text:"Lorem Epsum"},
-  {id:10, img:TBlank, title:"_Blank", text:"Lorem Epsum"},
-  {id:11, img:TBlank, title:"_Blank", text:"Lorem Epsum"},
-  {id:12, img:TBlank, title:"_Blank", text:"Lorem Epsum"}
+  {id:1, img:TPasarSenyum, title:"Pasar Senyum", text:"Branding", link:'/portofolio/pasar-senyum'},
+  {id:2, img:TArktiv, title:"Arktiv", text:"Branding", link:'#'},
+  {id:3, img:TSenyumInd, title:"Senyum Ind", text:"Branding", link:'#'},
+  {id:4, img:TBerokah, title:"Berokah", text:"Branding", link:'#'},
+  {id:5, img:TCifo, title:"CIFO", text:"Branding", link:'#'},
+  {id:6, img:TDaf, title:"DAF", text:"Branding", link:'#'},
+  {id:7, img:TRas, title:"RAS", text:"Branding", link:'#'},
+  {id:8, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'},
+  {id:9, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'},
+  {id:10, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'},
+  {id:11, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'},
+  {id:12, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'}
 ]
 
 export default function Home() {
@@ -372,7 +372,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       {/* Footer */}
       <Footer />
     </div>

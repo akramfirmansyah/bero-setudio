@@ -10,6 +10,7 @@ module.exports = {
         'second': '#E09E00',
         'jurnal': '#1D1D1D',
         'phoneshadow': 'rgba(37, 179, 68, 0.3)',
+        'hdportofolio': '#7900E2',
       },
       dropShadow: {
         'icon': '0 5px 10px #E09E00',
