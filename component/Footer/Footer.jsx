@@ -9,7 +9,7 @@ import footerlogo from "../../public/Footer/Logo Warna.png";
 
 export default function Footer() {
     return (
-      <div className={style.footer}>
+      <div id='footer' className={style.footer}>
         <figure className={style.figurefooter}>
           <Image src={bgFooter} alt="Supergrafis ungu" layout="fill" raw='true' priority />
         </figure>

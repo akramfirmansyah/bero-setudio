@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 
 // Component
 import Navlogo from "../component/Navlogo/Navlogo";
@@ -28,6 +29,10 @@ export default function Jurnal() {
 
   return (
     <div className=" relative bg-jurnal z-[1]">
+
+      <Head>
+        <title>Bero Setudio - Jurnal</title>
+      </Head>
       
       {/* Navbar Top */}
       <Navlogo class="fixed top-6 left-[10%] z-50" />
@@ -39,6 +44,7 @@ export default function Jurnal() {
       <div className=" absolute h-screen w-full overflow-hidden -z-[1]">
         <Image
           src={bgJurnal}
+          alt=''
           layout="fill"
           objectFit="cover"
           quality={100}

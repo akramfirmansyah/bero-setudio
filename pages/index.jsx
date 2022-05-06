@@ -88,18 +88,18 @@ const team = [
 
 // Props Thumnail Our Work
 var thumnail = [
-  {id:1, img:TPasarSenyum, title:"Pasar Senyum", text:"Branding", link:'/portofolio/pasar-senyum'},
-  {id:2, img:TArktiv, title:"Arktiv", text:"Branding", link:'#'},
-  {id:3, img:TSenyumInd, title:"Senyum Ind", text:"Branding", link:'#'},
-  {id:4, img:TBerokah, title:"Berokah", text:"Branding", link:'#'},
-  {id:5, img:TCifo, title:"CIFO", text:"Branding", link:'#'},
-  {id:6, img:TDaf, title:"DAF", text:"Branding", link:'#'},
-  {id:7, img:TRas, title:"RAS", text:"Branding", link:'#'},
-  {id:8, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'},
-  {id:9, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'},
-  {id:10, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'},
-  {id:11, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'},
-  {id:12, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:'#'}
+  {id:1, img:TPasarSenyum, title:"Pasar Senyum", text:"Branding", link:'pasar-senyum'},
+  {id:2, img:TArktiv, title:"Arktiv", text:"Branding", link:''},
+  {id:3, img:TSenyumInd, title:"Senyum Ind", text:"Branding", link:''},
+  {id:4, img:TBerokah, title:"Berokah", text:"Branding", link:''},
+  {id:5, img:TCifo, title:"CIFO", text:"Branding", link:''},
+  {id:6, img:TDaf, title:"DAF", text:"Branding", link:''},
+  {id:7, img:TRas, title:"RAS", text:"Branding", link:''},
+  {id:8, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''},
+  {id:9, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''},
+  {id:10, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''},
+  {id:11, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''},
+  {id:12, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''}
 ]
 
 export default function Home() {
@@ -115,6 +115,7 @@ export default function Home() {
         <div className="relative w-full h-full">
           <Image
             src={Supergrafis}
+            alt=''
             layout="fill"
             placeholder="blurDataURL"
             priority
@@ -160,7 +161,7 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="#footer">
                     <a className="ml-[25px] capitalize">contact us</a>
                   </Link>
                 </li>
@@ -242,7 +243,7 @@ export default function Home() {
       </div>
 
       {/* Video Reel */}
-      <div>
+      {/* <div>
         <iframe
           className="aspect-video w-full"
           src={yt}
@@ -251,7 +252,7 @@ export default function Home() {
           allow="autoplay"
           allowFullScreen
         ></iframe>
-      </div>
+      </div> */}
 
       {/* Our Service */}
       <div id="service" className="w-full flex justify-center text-primary">
@@ -334,7 +335,7 @@ export default function Home() {
               {team.map((team) => {
                 return (
                   <div key={team.id}>
-                    <Image src={team.img} className="rounded-b-[75px]" />
+                    <Image src={team.img} alt='' className="rounded-b-[75px]" />
                   </div>
                 );
               })}
@@ -343,7 +344,7 @@ export default function Home() {
               <h3 className="font-black my-[10px] mx-auto">
                 Superteam
               </h3>
-              <p className="m-0 text-xl">
+              <p className="m-0 text-base">
                 There is no superman here,<br></br>but we have Superteam
               </p>
             </div>
@@ -359,7 +360,7 @@ export default function Home() {
           </h2>
           <OurWork thumnail={thumnail} />
           <button className="flex justify-center items-center rounded-full capitalize bg-[#7d06d8] text-white px-[30px] py-[5px] my-[70px] mx-auto transition-all hover:bg-primary">
-            <Link href="/jurnal/all-jurnal">
+            <Link href="/jurnal/all">
               <a className="text-xl font-bold">see more</a>
             </Link>
           </button>

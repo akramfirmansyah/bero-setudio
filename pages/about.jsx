@@ -51,13 +51,13 @@ export default function About() {
   return (
     <div>
       <Head>
-        <title>About Us</title>
+        <title>Bero Setudio - About Us</title>
       </Head>
 
       {/* Hero */}
       <div className="relative">
         <div className="relative h-screen w-full bg-gradient-to-t from-[#57209D] to-[#7900E2]">
-          <Image src={Supergrafis} layout="fill" objectFit="cover" />
+          <Image src={Supergrafis} alt='' layout="fill" objectFit="cover" />
         </div>
         <div className="z-10 absolute top-1/2 left-0 -translate-y-1/3">
           <div className="w-4/5 mx-auto flex justify-between items-center">
@@ -132,7 +132,7 @@ export default function About() {
             {clients.map((client) => {
               return (
                 <div className="w-1/5" key={client.id}>
-                  <Image src={client.img} />
+                  <Image src={client.img} alt='' />
                 </div>
               );
             })}
@@ -148,7 +148,7 @@ export default function About() {
             {lifes.map((life) => {
               return (
                 <figure className="w-[250px] h-[250px]" key={life.id}>
-                  <Image src={life.img} />
+                  <Image src={life.img} alt='' />
                 </figure>
               );
             })}

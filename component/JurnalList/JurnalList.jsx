@@ -8,8 +8,8 @@ export default function JurnalLinkContent(props) {
       <li key={props.id} className={Style.warpli}>
         <Link
           href={{
-            pathname: "/jurnal/[id]",
-            query: { id: props.link },
+            pathname: "/jurnal/[slugjurnal]",
+            query: { slugjurnal: props.link },
           }}
         >
           <a className={Style.linka}>

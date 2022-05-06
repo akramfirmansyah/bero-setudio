@@ -49,7 +49,7 @@ const jurnal1 = ()=> {
         <Navbottom class="fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]" />
         {/* Banner */}
         <figure className="relative w-full h-[70vh]">
-          <Image src={Banner} layout="fill" objectFit="cover" />
+          <Image src={Banner} alt='' layout="fill" objectFit="cover" />
         </figure>
 
         {/* Jurnal Content */}
@@ -79,7 +79,7 @@ const jurnal1 = ()=> {
               </p>
 
               <figure className="relative w-full my-8">
-                <Image src={image01} layout="responsive" />
+                <Image src={image01} alt='' layout="responsive" />
               </figure>
 
               <p>
@@ -101,7 +101,7 @@ const jurnal1 = ()=> {
               </p>
 
               <figure className="relative w-full my-8">
-                <Image src={image02} layout="responsive" />
+                <Image src={image02} alt='' layout="responsive" />
               </figure>
 
               <p>
@@ -119,10 +119,10 @@ const jurnal1 = ()=> {
               </p>
 
               <figure className="relative w-full my-8">
-                <Image src={image03} layout="responsive" />
+                <Image src={image03} alt='' layout="responsive" />
               </figure>
               <figure className="relative w-full my-8">
-                <Image src={image04} layout="responsive" />
+                <Image src={image04} alt='' layout="responsive" />
               </figure>
 
               <p>
@@ -165,6 +165,7 @@ const jurnal1 = ()=> {
                         <figure className="relative w-full aspect-video mb-5">
                           <Image
                             src={more.image}
+                            alt=''
                             layout="fill"
                             objectFit="cover"
                           />

@@ -41,9 +41,9 @@ export default function AllJournals() {
         {/* Content */}
         {thumnail.map((thumbail) => {
           return (
-            <div className=" relative w-full h-[400px]">
+            <div className=" relative w-full h-[400px]" key={thumbail.id}>
               <figure className="absolute w-full h-full overflow-hidden">
-                <Image src={thumbail.image} layout="fill" />
+                <Image src={thumbail.image} alt='' layout="fill" />
               </figure>
               <div className="text-white z-[1] absolute right-[10%] bottom-[20%]">
                 <h3 className=" text-5xl font-bold capitalize">

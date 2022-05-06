@@ -42,7 +42,7 @@ export default function PasarSenyum() {
         <div className=" h-screen w-full bg-hdportofolio flex justify-center items-center text-white">
           <div className=" w-4/5">
             <div className="border-b pb-4 mb-8">
-              <Image src={logo} />
+              <Image src={logo} alt='' />
             </div>
             <h3 className="uppercase font-black text-2xl mb-4">Project Info</h3>
             <div className="flex justify-between">
@@ -118,7 +118,7 @@ export default function PasarSenyum() {
 
             return (
               <div key={frames.id}>
-                <Image src={frames.frame} layout="responsive" quality={60} />
+                <Image src={frames.frame} alt='' layout="responsive" quality={60} />
               </div>
             );
           })}

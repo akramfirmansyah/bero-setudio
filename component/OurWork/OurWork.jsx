@@ -9,7 +9,10 @@ const OurWork = (props) => {
       {props.thumnail.map((thumnail) => {
         if (thumnail.title !== "_Blank") {
           return (
-            <Link href={thumnail.link} key={thumnail.id} passHref>
+            <Link href={{
+              pathname: '/portofolio/[slugportofolio]',
+              query: { slugportofolio: thumnail.link }
+            }} key={thumnail.id} passHref>
                 <a className={style.owimage}>
                   <div className={style.zoomin}>
                     <figure>
