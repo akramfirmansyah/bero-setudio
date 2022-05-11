@@ -81,8 +81,8 @@ export default function Footer() {
                 </Link>
               </div>
               <div className={style.connect}>
-                <Link href="/jurnal">
-                  <a>Jurnal</a>
+                <Link href="/journals">
+                  <a>Journals</a>
                 </Link>
               </div>
             </div>

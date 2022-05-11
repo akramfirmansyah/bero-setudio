@@ -1,37 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from 'next/link';
+import Link from "next/link";
+import axios from "axios";
 
-// Image
-import Supergrafis from "../public/Landing Page/Home/Supergrafis.png";
-import All from "../public/Landing Page/Our Team/All.png";
-import Iqbal from '../public/Landing Page/Our Team/Iqbal.png'
-import Uma from '../public/Landing Page/Our Team/Uma.png'
-import Agun from '../public/Landing Page/Our Team/Agun.png'
-import Rizki from '../public/Landing Page/Our Team/Rizki.png'
-import Alif from '../public/Landing Page/Our Team/Alif.png'
-import Yunus from '../public/Landing Page/Our Team/Yunus.png'
-
-import TBlank from '../public/Landing Page/Our Work/Blank_Thumbnail.png'
-import TPasarSenyum from '../public/Landing Page/Our Work/Pasar Senyum_Thumbnail.png'
-import TArktiv from '../public/Landing Page/Our Work/Arktiv_Thumbnail.png'
-import TBerokah from '../public/Landing Page/Our Work/Berokah_Thumbnail.png'
-import TCifo from '../public/Landing Page/Our Work/CIFO_Thumbnail.png'
-import TDaf from '../public/Landing Page/Our Work/DAF_Thumbnail.png'
-import TRas from '../public/Landing Page/Our Work/RAS_Thumbnail.png'
-import TSenyumInd from '../public/Landing Page/Our Work/Senyum Ind_Thumbnail.png'
-
-// Video YT
-var yt = "https://youtu.be/hiTBe0oJotg";
-var yt = yt.replace("https://youtu.be/", "https://www.youtube.com/embed/");
+// Component
+import OurWork from "../component/OurWork/OurWork";
+import Footer from "../component/Footer/Footer";
+import Navlogo from "../component/Navlogo/Navlogo";
 
 // Icon
 import { FaCamera } from "react-icons/fa";
 import { BiVector } from "react-icons/bi";
 import { MdPhoneIphone } from "react-icons/md";
-import { GrPrevious, GrNext } from 'react-icons/gr'
-import { BsWhatsapp } from 'react-icons/bs'
-import { IoIosArrowUp } from 'react-icons/io'
+import { GrPrevious, GrNext } from "react-icons/gr";
+import { BsWhatsapp } from "react-icons/bs";
+import { IoIosArrowUp } from "react-icons/io";
 
 // Carousel
 import { Carousel } from "react-responsive-carousel";
@@ -46,24 +29,25 @@ const carouselProp = {
   interval: 5000,
   renderArrowPrev: (clickHandler, hasPrev, label) => {
     return (
-      <span className="absolute left-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white" onClick={clickHandler}>
+      <span
+        className="absolute left-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white"
+        onClick={clickHandler}
+      >
         <GrPrevious size={28} />
       </span>
     );
   },
   renderArrowNext: (clickHandler, hasNext, label) => {
     return (
-      <span className="absolute right-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white" onClick={clickHandler}>
+      <span
+        className="absolute right-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white"
+        onClick={clickHandler}
+      >
         <GrNext size={28} />
       </span>
     );
   },
 };
-
-// Component
-import OurWork from "../component/OurWork/OurWork";
-import Footer from "../component/Footer/Footer";
-import Navlogo from "../component/Navlogo/Navlogo";
 
 
 // Variabel
@@ -71,38 +55,49 @@ import Navlogo from "../component/Navlogo/Navlogo";
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 };
 
-// Team
-const team = [
-  { id: 1, img: All },
-  { id: 2, img: Iqbal },
-  { id: 3, img: Uma },
-  { id: 4, img: Agun },
-  { id: 5, img: Rizki },
-  { id: 6, img: Alif },
-  { id: 7, img: Yunus },
-];
+// Image
+import Supergrafis from "../public/Landing Page/Home/Supergrafis.png";
+
+import TBlank from "../public/Landing Page/Our Work/Blank_Thumbnail.png";
+import TPasarSenyum from "../public/Landing Page/Our Work/Pasar Senyum_Thumbnail.png";
+import TArktiv from "../public/Landing Page/Our Work/Arktiv_Thumbnail.png";
+import TBerokah from "../public/Landing Page/Our Work/Berokah_Thumbnail.png";
+import TCifo from "../public/Landing Page/Our Work/CIFO_Thumbnail.png";
+import TDaf from "../public/Landing Page/Our Work/DAF_Thumbnail.png";
+import TRas from "../public/Landing Page/Our Work/RAS_Thumbnail.png";
+import TSenyumInd from "../public/Landing Page/Our Work/Senyum Ind_Thumbnail.png";
+
+// Video YT
+var yt = "https://youtu.be/hiTBe0oJotg";
+var yt = yt.replace("https://youtu.be/", "https://www.youtube.com/embed/");
 
 // Props Thumnail Our Work
 var thumnail = [
-  {id:1, img:TPasarSenyum, title:"Pasar Senyum", text:"Branding", link:'pasar-senyum'},
-  {id:2, img:TArktiv, title:"Arktiv", text:"Branding", link:''},
-  {id:3, img:TSenyumInd, title:"Senyum Ind", text:"Branding", link:''},
-  {id:4, img:TBerokah, title:"Berokah", text:"Branding", link:''},
-  {id:5, img:TCifo, title:"CIFO", text:"Branding", link:''},
-  {id:6, img:TDaf, title:"DAF", text:"Branding", link:''},
-  {id:7, img:TRas, title:"RAS", text:"Branding", link:''},
-  {id:8, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''},
-  {id:9, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''},
-  {id:10, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''},
-  {id:11, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''},
-  {id:12, img:TBlank, title:"_Blank", text:"Lorem Epsum", link:''}
-]
+  {
+    id: 1,
+    img: TPasarSenyum,
+    title: "Pasar Senyum",
+    text: "Branding",
+    link: "pasar-senyum",
+  },
+  { id: 2, img: TArktiv, title: "Arktiv", text: "Branding", link: "" },
+  { id: 3, img: TSenyumInd, title: "Senyum Ind", text: "Branding", link: "" },
+  { id: 4, img: TBerokah, title: "Berokah", text: "Branding", link: "" },
+  { id: 5, img: TCifo, title: "CIFO", text: "Branding", link: "" },
+  { id: 6, img: TDaf, title: "DAF", text: "Branding", link: "" },
+  { id: 7, img: TRas, title: "RAS", text: "Branding", link: "" },
+  { id: 8, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
+  { id: 9, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
+  { id: 10, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
+  { id: 11, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
+  { id: 12, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
+];
 
-export default function Home() {
+export default function Home({ dataTeams }) {
   return (
     <div>
       {/* Head */}
@@ -115,7 +110,7 @@ export default function Home() {
         <div className="relative w-full h-full">
           <Image
             src={Supergrafis}
-            alt=''
+            alt=""
             layout="fill"
             placeholder="blurDataURL"
             priority
@@ -134,40 +129,45 @@ export default function Home() {
           <div className="flex w-4/5 h-full justify-between items-center">
             <Navlogo />
             <div>
-              <ul className="flex">
-                <li>
+              <ul className="flex capitalize text-center">
+                <li className="">
                   <Link href="#">
-                    <a className="capitalize">home</a>
+                    <a className="">home</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#service">
-                    <a className="ml-[25px] capitalize">Service</a>
+                    <a className="ml-[25px] ">Service</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#team">
-                    <a className="ml-[25px] capitalize">our team</a>
+                    <a className="ml-[25px] ">our team</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#work">
-                    <a className="ml-[25px] capitalize">works</a>
+                    <a className="ml-[25px] ">works</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/jurnal">
-                    <a className="ml-[25px] capitalize">journals</a>
+                  <Link href="/journals">
+                    <a className="ml-[25px] ">journals</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="#footer">
-                    <a className="ml-[25px] capitalize">contact us</a>
+                    <a className="ml-[25px] ">contact us</a>
                   </Link>
                 </li>
                 <li>
                   <Link href="/about">
-                    <a className="ml-[25px] capitalize">about</a>
+                    <a className="ml-[25px] ">about</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/test">
+                    <a className="ml-[25px] ">test</a>
                   </Link>
                 </li>
               </ul>
@@ -243,7 +243,7 @@ export default function Home() {
       </div>
 
       {/* Video Reel */}
-      {/* <div>
+      <div>
         <iframe
           className="aspect-video w-full"
           src={yt}
@@ -252,7 +252,7 @@ export default function Home() {
           allow="autoplay"
           allowFullScreen
         ></iframe>
-      </div> */}
+      </div>
 
       {/* Our Service */}
       <div id="service" className="w-full flex justify-center text-primary">
@@ -332,18 +332,22 @@ export default function Home() {
           </h2>
           <div className="flex justify-center items-center flex-col">
             <Carousel {...carouselProp}>
-              {team.map((team) => {
+              {dataTeams.data.map((team) => {
                 return (
                   <div key={team.id}>
-                    <Image src={team.img} alt='' className="rounded-b-[75px]" />
+                    <Image
+                      src={team.image}
+                      alt=""
+                      width={1080}
+                      height={440}
+                      className="rounded-b-[75px]"
+                    />
                   </div>
                 );
               })}
             </Carousel>
             <div className="text-center text-5xl">
-              <h3 className="font-black my-[10px] mx-auto">
-                Superteam
-              </h3>
+              <h3 className="font-black my-[10px] mx-auto">Superteam</h3>
               <p className="m-0 text-base">
                 There is no superman here,<br></br>but we have Superteam
               </p>
@@ -360,7 +364,7 @@ export default function Home() {
           </h2>
           <OurWork thumnail={thumnail} />
           <button className="flex justify-center items-center rounded-full capitalize bg-[#7d06d8] text-white px-[30px] py-[5px] my-[70px] mx-auto transition-all hover:bg-primary">
-            <Link href="/jurnal/all">
+            <Link href="/journals/all">
               <a className="text-xl font-bold">see more</a>
             </Link>
           </button>
@@ -377,4 +381,15 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const BASEURL = process.env.BASEURL;
+
+  const getTeams = await axios.get(BASEURL + "teams");
+  const dataTeams = getTeams.data;
+
+  return {
+    props: { dataTeams },
+  };
 }

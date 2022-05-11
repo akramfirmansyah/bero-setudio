@@ -11,4 +11,7 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
+  images: {
+    domains: ['127.0.0.1'],
+  },
 }

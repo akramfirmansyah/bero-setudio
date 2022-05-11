@@ -1,31 +1,28 @@
 import axios from "axios";
+import Image from "next/image";
 
-function Test({ dataUsers, dataAlbum }) {
+function Test({ id }) {
   return (
-    <ul>
-      {dataUsers.map((user) => (
-        <li key={user.id}>Username: {user.username}, email: {user.email}</li>
-      ))}
-    </ul>
+    <div>
+      <p>Path: {id}</p>
+    </div>
   );
 }
 
-export async function getServerSideProps() {
-  // get data User
-  const getUsers = await axios.get(
-    "https://jsonplaceholder.typicode.com/users"
-  );
-  const dataUsers = getUsers.data;
+export async function getServerSideProps(context) {
+//   const BASEURL = process.env.BASEURL
+  
+//   // get data Album
 
-  // get data Album
-  const getAlbum = await axios.get(
-    "https://jsonplaceholder.typicode.com/photos"
-  );
-  const dataAlbum = getAlbum.data;
+//   const getTeams = await axios.get(BASEURL+"/teams");
+//   const dataTeams = getTeams.data;
+
+  // Context
+  const id = context.params
 
   return {
-    props: { dataUsers, dataAlbum }, // will be passed to the page component as props
+    props: { id }, // will be passed to the page component as props
   };
 }
 
-export default Test;  
+export default Test;

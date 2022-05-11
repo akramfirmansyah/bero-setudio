@@ -8,22 +8,22 @@ export default function JurnalLinkContent(props) {
       <li key={props.id} className={Style.warpli}>
         <Link
           href={{
-            pathname: "/jurnal/[slugjurnal]",
-            query: { slugjurnal: props.link },
+            pathname: "/journals/[slugjurnal]",
+            query: { slugjurnal: props.slug },
           }}
         >
           <a className={Style.linka}>
             <div className={Style.containerImage}>
-              <Image src={props.img} layout='fill' />
+              <Image src={props.thumbnail} alt='' layout='fill' />
             </div>
             <h3>{props.title}</h3>
-            <p>
-              {props.datePublish}
-              <span> by </span>
-              {props.publisher}
-            </p>
           </a>
         </Link>
+            <p className=" font-light text-white">
+              {props.datePublish}
+              <span className=" font-semibold"> by </span>
+              {props.writer}
+            </p>
       </li>
     );
 }
