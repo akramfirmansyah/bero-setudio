@@ -96,7 +96,7 @@ const JournalsContent = ({ dataJournalsContent, dataJournals })=> {
             More Journals
           </h3>
           <ScrollContainer className="scroll-container w-full overflow-hidden whitespace-nowrap mb-12">
-            {dataJournals.data.map((journal) => {
+            {dataJournals.data.reverse().map((journal) => {
                 return (
                   <div key={journal.id} className="w-1/4 inline-block mx-10">
                     <Link href={{
@@ -137,10 +137,10 @@ export async function getServerSideProps(context) {
   const BASEURL = process.env.BASEURL
   const slug = context.params
 
-  const getJournalContent = await axios.get(BASEURL+'journals/'+slug.slug)
+  const getJournalContent = await axios.get(BASEURL+'/journals/'+slug.slug)
   const dataJournalsContent = await getJournalContent.data
   
-  const getJournal = await axios.get(BASEURL+'journals')
+  const getJournal = await axios.get(BASEURL+'/journals')
   const dataJournals = await getJournal.data
   return {
     props: {

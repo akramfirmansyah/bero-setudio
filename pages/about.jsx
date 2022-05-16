@@ -2,18 +2,19 @@
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import ReactPlayer from "react-player";
 
 // Icon
 import { AiFillEye, AiFillRocket } from "react-icons/ai";
 
 // Image
-import Supergrafis from "../public/About/Supergrafis Ungu.png";
-import Client from "../public/About/client.png";
+import Supergrafis from "../public/About/SupergrafisAbout.png";
 import AE from "../public/About/AE.png";
 import DC from "../public/About/DC.png";
+import Client from "../public/About/client.png";
 
 // Variabel
-const yt = 'https://www.youtube.com/embed/gpg1Yi3U6Kc?controls=0'
+const urlYT = 'https://www.youtube.com/watch?v=PIzqS7FWtL0'
 
 const clients = [
   { id: 1, img: Client },
@@ -51,17 +52,17 @@ export default function About() {
   return (
     <div>
       <Head>
-        <title>Bero Setudio - About Us</title>
+        <title>About Us</title>
       </Head>
 
       {/* Hero */}
       <div className="relative">
         <div className="relative h-screen w-full bg-gradient-to-t from-[#57209D] to-[#7900E2]">
-          <Image src={Supergrafis} alt='' layout="fill" objectFit="cover" />
+          <Image src={Supergrafis} alt='' layout="fill" objectFit="cover" priority />
         </div>
         <div className="z-10 absolute top-1/2 left-0 -translate-y-1/3">
           <div className="w-4/5 mx-auto flex justify-between items-center">
-            <div className="text-white w-3/5 pr-5">
+            <div className="text-white w-6/12 pr-5">
               <h3 className="font-bold text-4xl mb-6">
                 Agensi Kreatif Dengan Lorem Ipsum
               </h3>
@@ -75,15 +76,14 @@ export default function About() {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </p>
             </div>
-            <div className="w-2/5">
-              <iframe
-                src={yt}
-                className="aspect-video w-full"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+            <div className="w-5/12 aspect-video">
+              <ReactPlayer 
+                url={urlYT} 
+                volume={0.5}
+                loop={true} 
+                width='100%' 
+                height='100%'
+              />
             </div>
           </div>
         </div>

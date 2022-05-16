@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
+import ReactPlayer from "react-player";
 
 // Component
 import OurWork from "../component/OurWork/OurWork";
@@ -19,38 +20,9 @@ import { IoIosArrowUp } from "react-icons/io";
 // Carousel
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-const carouselProp = {
-  showStatus: false,
-  showIndicators: false,
-  showArrows: true,
-  showThumbs: false,
-  infiniteLoop: true,
-  autoPlay: true,
-  interval: 5000,
-  renderArrowPrev: (clickHandler, hasPrev, label) => {
-    return (
-      <span
-        className="absolute left-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white"
-        onClick={clickHandler}
-      >
-        <GrPrevious size={28} />
-      </span>
-    );
-  },
-  renderArrowNext: (clickHandler, hasNext, label) => {
-    return (
-      <span
-        className="absolute right-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white"
-        onClick={clickHandler}
-      >
-        <GrNext size={28} />
-      </span>
-    );
-  },
-};
-
 
 // Variabel
+
 // Function Scroll to Top
 const scrollToTop = () => {
   window.scrollTo({
@@ -59,45 +31,13 @@ const scrollToTop = () => {
   });
 };
 
-// Image
-import Supergrafis from "../public/Landing Page/Home/Supergrafis.png";
-
-import TBlank from "../public/Landing Page/Our Work/Blank_Thumbnail.png";
-import TPasarSenyum from "../public/Landing Page/Our Work/Pasar Senyum_Thumbnail.png";
-import TArktiv from "../public/Landing Page/Our Work/Arktiv_Thumbnail.png";
-import TBerokah from "../public/Landing Page/Our Work/Berokah_Thumbnail.png";
-import TCifo from "../public/Landing Page/Our Work/CIFO_Thumbnail.png";
-import TDaf from "../public/Landing Page/Our Work/DAF_Thumbnail.png";
-import TRas from "../public/Landing Page/Our Work/RAS_Thumbnail.png";
-import TSenyumInd from "../public/Landing Page/Our Work/Senyum Ind_Thumbnail.png";
-
 // Video YT
-var yt = "https://youtu.be/hiTBe0oJotg";
-var yt = yt.replace("https://youtu.be/", "https://www.youtube.com/embed/");
+const urlYT = "https://www.youtube.com/watch?v=iiyYOI5MnzY";
 
-// Props Thumnail Our Work
-var thumnail = [
-  {
-    id: 1,
-    img: TPasarSenyum,
-    title: "Pasar Senyum",
-    text: "Branding",
-    link: "pasar-senyum",
-  },
-  { id: 2, img: TArktiv, title: "Arktiv", text: "Branding", link: "" },
-  { id: 3, img: TSenyumInd, title: "Senyum Ind", text: "Branding", link: "" },
-  { id: 4, img: TBerokah, title: "Berokah", text: "Branding", link: "" },
-  { id: 5, img: TCifo, title: "CIFO", text: "Branding", link: "" },
-  { id: 6, img: TDaf, title: "DAF", text: "Branding", link: "" },
-  { id: 7, img: TRas, title: "RAS", text: "Branding", link: "" },
-  { id: 8, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
-  { id: 9, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
-  { id: 10, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
-  { id: 11, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
-  { id: 12, img: TBlank, title: "_Blank", text: "Lorem Epsum", link: "" },
-];
+// Image
+import Supergrafis from "../public/SupergrafisHome.png";
 
-export default function Home({ dataTeams }) {
+export default function Home({ dataTeams, dataWorks }) {
   return (
     <div>
       {/* Head */}
@@ -163,11 +103,6 @@ export default function Home({ dataTeams }) {
                 <li>
                   <Link href="/about">
                     <a className="ml-[25px] ">about</a>
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/test">
-                    <a className="ml-[25px] ">test</a>
                   </Link>
                 </li>
               </ul>
@@ -243,15 +178,14 @@ export default function Home({ dataTeams }) {
       </div>
 
       {/* Video Reel */}
-      <div>
-        <iframe
-          className="aspect-video w-full"
-          src={yt}
-          title="Video Showreel Porto"
-          frameBorder="0"
-          allow="autoplay"
-          allowFullScreen
-        ></iframe>
+      <div className="aspect-video w-full">
+        <ReactPlayer
+          url={urlYT}
+          volume={0.5}
+          loop={true}
+          width="100%"
+          height="100%"
+        />
       </div>
 
       {/* Our Service */}
@@ -331,7 +265,35 @@ export default function Home({ dataTeams }) {
             our <span className="font-bold">team</span>
           </h2>
           <div className="flex justify-center items-center flex-col">
-            <Carousel {...carouselProp}>
+            <Carousel
+              showStatus={false}
+              showIndicators={false}
+              showArrows={true}
+              showThumbs={false}
+              infiniteLoop={true}
+              autoPlay={true}
+              interval={5000}
+              renderArrowPrev={(clickHandler, hasPrev, label) => {
+                return (
+                  <span
+                    className="absolute left-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white"
+                    onClick={clickHandler}
+                  >
+                    <GrPrevious size={28} />
+                  </span>
+                );
+              }}
+              renderArrowNext={(clickHandler, hasNext, label) => {
+                return (
+                  <span
+                    className="absolute right-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white"
+                    onClick={clickHandler}
+                  >
+                    <GrNext size={28} />
+                  </span>
+                );
+              }}
+            >
               {dataTeams.data.map((team) => {
                 return (
                   <div key={team.id}>
@@ -362,12 +324,13 @@ export default function Home({ dataTeams }) {
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
             our <span className="font-bold">work</span>
           </h2>
-          <OurWork thumnail={thumnail} />
-          <button className="flex justify-center items-center rounded-full capitalize bg-[#7d06d8] text-white px-[30px] py-[5px] my-[70px] mx-auto transition-all hover:bg-primary">
-            <Link href="/journals/all">
-              <a className="text-xl font-bold">see more</a>
+          {/* <OurWork thumnail={thumnail} /> */}
+          <OurWork work={dataWorks} />
+          <div className="flex justify-center items-center capitalize text-white my-[50px]">
+            <Link href="/portofolio/all">
+              <a className="text-xl font-bold rounded-full px-[30px] py-[5px] bg-[#7d06d8] transition-all hover:bg-primary">see more</a>
             </Link>
-          </button>
+          </div>
 
           <div className="relative flex justify-center items-center w-full h-[40px] mb-[20px]">
             <div className="absolute bg-[#4e2c7d] w-full h-[1px]"></div>
@@ -386,10 +349,13 @@ export default function Home({ dataTeams }) {
 export async function getServerSideProps() {
   const BASEURL = process.env.BASEURL;
 
-  const getTeams = await axios.get(BASEURL + "teams");
+  const getTeams = await axios.get(BASEURL + "/teams");
   const dataTeams = getTeams.data;
 
+  const getWorks = await axios.get(BASEURL + "/works")
+  const dataWorks = getWorks.data
+
   return {
-    props: { dataTeams },
+    props: { dataTeams, dataWorks },
   };
 }

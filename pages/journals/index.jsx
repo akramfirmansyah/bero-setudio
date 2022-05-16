@@ -9,10 +9,11 @@ import JurnalList from "../../component/JurnalList/JurnalList";
 import Footer from "../../component/Footer/Footer";
 
 // Image
-import bgJurnal from "../../public/Jurnal/Supergrafis Ungu.png";
+import bgJurnal from "../../public/Jurnal/SupergrafisJournal.png";
 
 
 function Jurnal({ dataJournals }) {
+
   return (
     <div className=" relative bg-jurnal z-[1]">
 
@@ -47,7 +48,7 @@ function Jurnal({ dataJournals }) {
             journals
           </h2>
           <ul className="w-full flex flex-wrap justify-between">
-            {dataJournals.data.map((journal) => (
+            {dataJournals.data.reverse().map((journal) => (
               <JurnalList
                 key={journal.id}
                 slug={journal.slug}
@@ -70,7 +71,7 @@ function Jurnal({ dataJournals }) {
 export async function getServerSideProps(context) {
   const BASEURL = process.env.BASEURL
 
-  const getJournal = await axios.get(BASEURL+'journals')
+  const getJournal = await axios.get(BASEURL+'/journals')
   const dataJournals = await getJournal.data
   
   return {

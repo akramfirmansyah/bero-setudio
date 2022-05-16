@@ -11,7 +11,7 @@ export default function Footer() {
     return (
       <div id='footer' className={style.footer}>
         <figure className={style.figurefooter}>
-          <Image src={bgFooter} alt="Supergrafis ungu" layout="fill" raw='true' priority />
+          <Image src={bgFooter} alt="Supergrafis ungu" layout="fill" priority />
         </figure>
         <div className={style.footerbox}>
           <div className={style.footerhead}>
@@ -66,12 +66,12 @@ export default function Footer() {
                 </Link>
               </div>
               <div className={style.connect}>
-                <Link href="#">
+                <Link href="https://wa.me/085600963500">
                   <a>Contact Us</a>
                 </Link>
               </div>
               <div className={style.connect}>
-                <Link href="#">
+                <Link href="/portofolio/all">
                   <a>Our Works</a>
                 </Link>
               </div>
