@@ -35,36 +35,9 @@ const frames = [
   { id: 9, frame: image8, type: "image" },
 ];
 
-const teams = [
-  {
-    id: 1,
-    role: "Design Director",
-    names: "G. Said Yunus"
-  },
-  {
-    id: 2,
-    role: "Graphic Designer",
-    names: "Alif Pratama"
-  },
-  {
-    id: 3,
-    role: "Project Lead",
-    names: "M. Iqbal Rizqi. S"
-  }
-]
-
-const clients = [
-  {
-    id: 1,
-    name: "Senyum Indonesia"
-  }
-]
-
-const sector = "Civil Society Organization"
-const year = "2021"
-
 function WorksContent({ dataWorkContent }) {
   const workContent = dataWorkContent.data;
+  console.log(workContent.teams)
   return (
     <div key={workContent.id}>
       {/* Hero */}
@@ -86,7 +59,7 @@ function WorksContent({ dataWorkContent }) {
             <div className="w-1/2 flex">
               {/* Teams */}
               <div className="w-1/2 uppercase">
-                {teams.map((team) => {
+                {workContent.teams.map((team) => {
                   return(
                     <div className="mb-3 w-full" key={team.id}>
                       <h5 className="text-lg font-bold">{team.role}</h5>
@@ -99,7 +72,7 @@ function WorksContent({ dataWorkContent }) {
               <div className="w-1/2 uppercase">
                 <div className="mb-3 w-full">
                   <h5 className="text-lg font-bold">Clients</h5>
-                  {clients.map((client) => {
+                  {workContent.clients.map((client) => {
                     return(
                       <li className="capitalize text-sm list-none" key={client.id}>{client.name}</li>
                     )
@@ -107,11 +80,11 @@ function WorksContent({ dataWorkContent }) {
                 </div>
                 <div className="mb-3 w-full">
                   <h5 className="text-lg font-bold">Sector</h5>
-                  <p className="capitalize text-sm">{sector}</p>
+                  <p className="capitalize text-sm">{workContent.sector}</p>
                 </div>
                 <div className="mb-3 w-full">
                   <h5 className="text-lg font-bold">year</h5>
-                  <p className="capitalize text-sm">{year}</p>
+                  <p className="capitalize text-sm">{workContent.year}</p>
                 </div>
               </div>
             </div>
