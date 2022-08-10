@@ -9,12 +9,6 @@ import Navbottom from "../../component/Navbottom/Navbottom"
 import Footer from "../../component/Footer/Footer"
 
 // Image
-import Banner from '../../public/Jurnal/Isi Jurnal/unsplash_br2HgQuvq6I.png'
-import image01 from '../../public/Jurnal/Isi Jurnal/unsplash_G95AReIh_Ko.png'
-import image02 from '../../public/Jurnal/Isi Jurnal/unsplash_f3P6xfrj2P8.png'
-import image03 from '../../public/Jurnal/Isi Jurnal/unsplash_xYkVtNlkWOE.png'
-import image04 from '../../public/Jurnal/Isi Jurnal/unsplash_F2h_WbKnX4o.png'
-
 import more01 from '../../public/Jurnal/Isi Jurnal/unsplash_ZSPBhokqDMc.png'
 import more02 from '../../public/Jurnal/Isi Jurnal/unsplash_BHOcoo6dr0E.png'
 import more03 from '../../public/Jurnal/Isi Jurnal/unsplash_Y2oE2uNLSrs.png'

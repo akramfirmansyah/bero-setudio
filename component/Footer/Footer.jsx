@@ -71,7 +71,7 @@ export default function Footer() {
                 </Link>
               </div>
               <div className={style.connect}>
-                <Link href="/portofolio/all">
+                <Link href="/portofolio">
                   <a>Our Works</a>
                 </Link>
               </div>

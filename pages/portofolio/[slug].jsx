@@ -21,7 +21,7 @@ import image6 from "../../public/Portofolio_Pasar Senyum/Frame 20.png";
 import image7 from "../../public/Portofolio_Pasar Senyum/Frame 21.png";
 import image8 from "../../public/Portofolio_Pasar Senyum/Frame 22.png";
 
-const video1 = "https://www.youtube.com/watch?v=6jr9lHZArCI";
+const video1 = "https://www.youtube.com/watch?v=AwUqgyHGy00";
 
 const frames = [
   { id: 1, frame: image1, type: "image" },
@@ -37,11 +37,17 @@ const frames = [
 
 function WorksContent({ dataWorkContent }) {
   const workContent = dataWorkContent.data;
-  console.log(workContent.teams)
+  console.log(workContent)
   return (
     <div key={workContent.id}>
+      {/* Navbar Top */}
+      <Navlogo class="fixed top-6 left-[10%] z-50" />
+
+      {/* Navbar Bottom */}
+      <Navbottom class="fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]" />
+
       {/* Hero */}
-      <div className=" h-screen w-full bg-hdportofolio flex justify-center items-center text-white">
+      <div className="h-[80vh] w-full bg-hdportofolio flex justify-center items-center text-white">
         <div className=" w-4/5">
           <div className="border-b pb-4 mb-8">
             <figure className="relative aspect-video h-[100px]">
@@ -91,12 +97,6 @@ function WorksContent({ dataWorkContent }) {
           </div>
         </div>
       </div>
-
-      {/* Navbar Top */}
-      <Navlogo class="fixed top-6 left-[10%] z-50" />
-
-      {/* Navbar Bottom */}
-      <Navbottom class="fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]" />
 
       {/* Content all Image */}
       <div>

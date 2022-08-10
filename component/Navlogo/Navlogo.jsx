@@ -5,7 +5,7 @@ import Link from "next/link";
 
 // Image
 import White from "../../public/Logo Bero White.png";
-import Color from "../../public/Bero Logogram.png";
+import Color from "../../public/Logo Warna.png";
 
 export default function Navlogo(props) {
   const [logo, setLogo] = useState(White);

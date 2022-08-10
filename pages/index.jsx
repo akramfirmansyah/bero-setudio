@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
 import ReactPlayer from "react-player";
+import { useState } from 'react';
 
 // Component
 import OurWork from "../component/OurWork/OurWork";
 import Footer from "../component/Footer/Footer";
-import Navlogo from "../component/Navlogo/Navlogo";
 
 // Icon
 import { FaCamera } from "react-icons/fa";
@@ -21,8 +21,6 @@ import { IoIosArrowUp } from "react-icons/io";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-// Variabel
-
 // Function Scroll to Top
 const scrollToTop = () => {
   window.scrollTo({
@@ -32,12 +30,15 @@ const scrollToTop = () => {
 };
 
 // Video YT
-const urlYT = "https://www.youtube.com/watch?v=iiyYOI5MnzY";
+const urlYT = "https://www.youtube.com/watch?v=8qbQgAUkLwk";
 
 // Image
 import Supergrafis from "../public/SupergrafisHome.png";
+import White from "../public/Logo Bero White.png";
+import Logogram from "../public/Bero Logogram.png";
 
 export default function Home({ dataTeams, dataWorks }) {
+  const [logo, setLogo] = useState(White);
   return (
     <div>
       {/* Head */}
@@ -65,9 +66,26 @@ export default function Home({ dataTeams, dataWorks }) {
         </div>
 
         {/* Navbar Top */}
-        <div className="absolute z-10 w-full bg-gradient-to-tr from-transparent to-[#7900E2] text-white flex justify-center h-[120px]">
+        <div className="absolute z-10 w-full bg-gradient-to-tr from-transparent to-[#7900E2] text-white font-semibold tracking-wide flex justify-center h-[120px]">
           <div className="flex w-4/5 h-full justify-between items-center">
-            <Navlogo />
+            {/* Logo Bero Setudio */}
+            <div>
+              <Link href="/">
+                <a
+                  onMouseEnter={() => setLogo(Logogram)}
+                  onMouseLeave={() => setLogo(White)}
+                >
+                  <Image
+                    src={logo}
+                    quality={100}
+                    height={65}
+                    width={148}
+                    id="logo"
+                  />
+                </a>
+              </Link>
+            </div>
+            {/* End Logo Setudio */}
             <div>
               <ul className="flex capitalize text-center">
                 <li className="">
@@ -109,6 +127,7 @@ export default function Home({ dataTeams, dataWorks }) {
             </div>
           </div>
         </div>
+        {/* End Navbar Top */}
 
         {/* Navbar Bottom */}
         <div id="NavbarBottom" className="fixed z-10 w-full bottom-10">
@@ -165,7 +184,9 @@ export default function Home({ dataTeams, dataWorks }) {
             </div>
           </div>
         </div>
+        {/* End Navbar Bottom */}
       </div>
+      {/* End Hero */}
 
       {/* About Us */}
       <div className="w-full h-20 text-[#616161] flex justify-center items-center text-center">
@@ -176,6 +197,7 @@ export default function Home({ dataTeams, dataWorks }) {
           creative services for your brands
         </p>
       </div>
+      {/* End About Us */}
 
       {/* Video Reel */}
       <div className="aspect-video w-full">
@@ -187,8 +209,9 @@ export default function Home({ dataTeams, dataWorks }) {
           height="100%"
         />
       </div>
+      {/* End Video Reel */}
 
-      {/* Our Service */}
+      {/* Service */}
       <div id="service" className="w-full flex justify-center text-primary">
         <div className="w-4/5 mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
@@ -257,8 +280,9 @@ export default function Home({ dataTeams, dataWorks }) {
           </div>
         </div>
       </div>
+      {/* End Service */}
 
-      {/* Our Team */}
+      {/* Team */}
       <div id="team" className="w-full flex justify-center text-primary">
         <div className="w-4/5 mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
@@ -317,8 +341,9 @@ export default function Home({ dataTeams, dataWorks }) {
           </div>
         </div>
       </div>
+      {/* End Team */}
 
-      {/* Our Work */}
+      {/* Work */}
       <div id="work" className="w-full flex justify-center text-primary">
         <div className="w-4/5 mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
@@ -327,8 +352,10 @@ export default function Home({ dataTeams, dataWorks }) {
           {/* <OurWork thumnail={thumnail} /> */}
           <OurWork work={dataWorks} />
           <div className="flex justify-center items-center capitalize text-white my-[50px]">
-            <Link href="/portofolio/all">
-              <a className="text-xl font-bold rounded-full px-[30px] py-[5px] bg-[#7d06d8] transition-all hover:bg-primary">see more</a>
+            <Link href="/portofolio">
+              <a className="text-xl font-bold rounded-full px-[30px] py-[5px] bg-[#7d06d8] transition-all hover:bg-primary">
+                see more
+              </a>
             </Link>
           </div>
 
@@ -340,8 +367,11 @@ export default function Home({ dataTeams, dataWorks }) {
           </div>
         </div>
       </div>
+      {/* End Work */}
+
       {/* Footer */}
       <Footer />
+      {/* End Footer */}
     </div>
   );
 }
@@ -352,8 +382,8 @@ export async function getServerSideProps() {
   const getTeams = await axios.get(BASEURL + "/teams");
   const dataTeams = getTeams.data;
 
-  const getWorks = await axios.get(BASEURL + "/works")
-  const dataWorks = getWorks.data
+  const getWorks = await axios.get(BASEURL + "/works");
+  const dataWorks = getWorks.data;
 
   return {
     props: { dataTeams, dataWorks },
