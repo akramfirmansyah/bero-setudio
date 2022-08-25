@@ -33,8 +33,9 @@ const scrollToTop = () => {
 const urlYT = "https://www.youtube.com/watch?v=8qbQgAUkLwk";
 
 // Image
-import Supergrafis from "../public/SupergrafisHome.png";
-import White from "../public/Logo Bero White.png";
+// import Supergrafis from "../public/SupergrafisHome.png";
+import Supergrafis from "../public/SupergrafisHome1.png";
+import White from "../public/Logo Bero White.png"; 
 import Logogram from "../public/Bero Logogram.png";
 
 export default function Home({ dataTeams, dataWorks }) {
@@ -58,16 +59,16 @@ export default function Home({ dataTeams, dataWorks }) {
           />
         </div>
 
-        <div className="absolute -translate-y-[15%] top-1/2 flex justify-end items-center">
+        {/* <div className="absolute -translate-y-[15%] top-1/2 flex justify-end items-center">
           <h2 className="uppercase text-right text-[66px] leading-[68px] font-black text-white tracking-wider mr-20 cursor-default">
             For all your<br></br>
             <span className="italic">creative needs</span>
           </h2>
-        </div>
+        </div> */}
 
         {/* Navbar Top */}
-        <div className="absolute z-10 w-full bg-gradient-to-tr from-transparent to-[#7900E2] text-white font-semibold tracking-wide flex justify-center h-[120px]">
-          <div className="flex w-4/5 h-full justify-between items-center">
+        <div className="absolute z-10 w-full bg-gradient-to-tr from-transparent to-[#7900E2] text-white tracking-wide flex justify-center h-[120px]">
+          <div className="flex w-[90%] h-full justify-between items-center">
             {/* Logo Bero Setudio */}
             <div>
               <Link href="/">
@@ -131,7 +132,7 @@ export default function Home({ dataTeams, dataWorks }) {
 
         {/* Navbar Bottom */}
         <div id="NavbarBottom" className="fixed z-10 w-full bottom-10">
-          <div className="w-4/5 mx-auto flex justify-between items-center">
+          <div className="w-[90%] mx-auto flex justify-between items-center">
             <Link href="https://wa.me/085600963500" passHref>
               <a
                 target="_blank"
@@ -213,7 +214,7 @@ export default function Home({ dataTeams, dataWorks }) {
 
       {/* Service */}
       <div id="service" className="w-full flex justify-center text-primary">
-        <div className="w-4/5 mt-[50px]">
+        <div className="w-[90%] mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
             our <span className="font-bold">service</span>
           </h2>
@@ -284,7 +285,7 @@ export default function Home({ dataTeams, dataWorks }) {
 
       {/* Team */}
       <div id="team" className="w-full flex justify-center text-primary">
-        <div className="w-4/5 mt-[50px]">
+        <div className="w-[90%] mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
             our <span className="font-bold">team</span>
           </h2>
@@ -300,20 +301,20 @@ export default function Home({ dataTeams, dataWorks }) {
               renderArrowPrev={(clickHandler, hasPrev, label) => {
                 return (
                   <span
-                    className="absolute left-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white"
+                    className="absolute left-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[46px] aspect-square z-10 rounded-full bg-white"
                     onClick={clickHandler}
                   >
-                    <GrPrevious size={28} />
+                    <GrPrevious size={24} />
                   </span>
                 );
               }}
               renderArrowNext={(clickHandler, hasNext, label) => {
                 return (
                   <span
-                    className="absolute right-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[50px] aspect-square z-10 rounded-full bg-white"
+                    className="absolute right-[32px] top-1/2 -translate-y-1/2 flex justify-center items-center h-[46px] aspect-square z-10 rounded-full bg-white"
                     onClick={clickHandler}
                   >
-                    <GrNext size={28} />
+                    <GrNext size={24} />
                   </span>
                 );
               }}
@@ -324,9 +325,9 @@ export default function Home({ dataTeams, dataWorks }) {
                     <Image
                       src={team.image}
                       alt=""
-                      width={1080}
-                      height={440}
-                      className="rounded-b-[75px]"
+                      width={1920}
+                      height={782}
+                      className="rounded-b-[50px]"  
                     />
                   </div>
                 );
@@ -345,7 +346,7 @@ export default function Home({ dataTeams, dataWorks }) {
 
       {/* Work */}
       <div id="work" className="w-full flex justify-center text-primary">
-        <div className="w-4/5 mt-[50px]">
+        <div className="w-[90%] mt-[50px]">
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
             our <span className="font-bold">work</span>
           </h2>

@@ -22,10 +22,10 @@ function Jurnal({ dataJournals }) {
       </Head>
       
       {/* Navbar Top */}
-      <Navlogo class="fixed top-6 left-[10%] z-50" />
+      <Navlogo class="fixed top-6 left-[5%] z-50" />
 
       {/* Navbar Bottom */}
-      <Navbottom class="fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]" />
+      <Navbottom class="fixed bottom-6 right-[5%] z-50 flex flex-col justify-between h-[90px]" />
 
       {/* Background */}
       <div className=" absolute h-screen w-full overflow-hidden -z-[1]">
@@ -41,7 +41,7 @@ function Jurnal({ dataJournals }) {
 
       {/* List Jurnal */}
       <div className=" w-full flex justify-center">
-        <div className=" w-4/5">
+        <div className="w-[90%]">
           <h2 className="capitalize text-white text-7xl font-light pt-60 z-10 pb-10 border-b mb-12">
             <span className=" font-bold">bero's</span>
             <br />

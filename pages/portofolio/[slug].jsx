@@ -41,10 +41,10 @@ function WorksContent({ dataWorkContent }) {
   return (
     <div key={workContent.id}>
       {/* Navbar Top */}
-      <Navlogo class="fixed top-6 left-[10%] z-50" />
+      <Navlogo class="fixed top-6 left-[5%] z-50" />
 
       {/* Navbar Bottom */}
-      <Navbottom class="fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]" />
+      <Navbottom class="fixed bottom-6 right-[5%] z-50 flex flex-col justify-between h-[90px]" />
 
       {/* Hero */}
       <div className="h-[80vh] w-full bg-hdportofolio flex justify-center items-center text-white">

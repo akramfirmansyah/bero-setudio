@@ -61,7 +61,7 @@ export default function About() {
           <Image src={Supergrafis} alt='' layout="fill" objectFit="cover" priority />
         </div>
         <div className="z-10 absolute top-1/2 left-0 -translate-y-1/3">
-          <div className="w-4/5 mx-auto flex justify-between items-center">
+          <div className="w-[90%] mx-auto flex justify-between items-center">
             <div className="text-white w-6/12 pr-5">
               <h3 className="font-bold text-4xl mb-6">
                 Agensi Kreatif Dengan Lorem Ipsum
@@ -89,16 +89,16 @@ export default function About() {
         </div>
 
         {/* Navbar Top */}
-        <Navlogo class="fixed top-6 left-[10%] z-50" />
+        <Navlogo class="fixed top-6 left-[5%] z-50" />
 
         {/* Navbar Bottom */}
-        <Navbottom class='fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]' />
+        <Navbottom class='fixed bottom-6 right-[5%] z-50 flex flex-col justify-between h-[90px]' />
         
       </div>
 
       {/* Visi Misi */}
       <div className="bg-[#7900E2] flex justify-center items-center">
-        <div className="flex justify-between w-4/5 text-white my-16">
+        <div className="flex justify-between w-[90%] text-white my-16">
           <div className="w-5/12">
             <h5 className="text-xl">Visi</h5>
             <div className="relative flex justify-end items-center">
@@ -124,7 +124,7 @@ export default function About() {
 
       {/* Client */}
       <div className="flex justify-center items-center">
-        <div className="w-4/5 my-16 flex flex-col items-center">
+        <div className="w-[90%] my-16 flex flex-col items-center">
           <h3 className="font-black text-[#7900E2] text-4xl mb-10">
             Our Clients
           </h3>
@@ -142,19 +142,19 @@ export default function About() {
 
       {/* Setudio Life */}
       <div className="bg-[#1D1D1D] flex justify-center items-center">
-        <div className="my-16 w-4/5 flex flex-col items-center text-white">
+        <div className="my-16 w-[90%] flex flex-col items-center justify-center text-white">
           <h3 className="font-black text-4xl mb-10">Setudio Life</h3>
-          <div className="w-full flex flex-wrap mb-8">
+          <div className="w-full flex justify-center flex-wrap mb-8">
             {lifes.map((life) => {
               return (
-                <figure className="w-[250px] h-[250px]" key={life.id}>
-                  <Image src={life.img} alt='' />
+                <figure className="w-1/4 aspect-square relative" key={life.id}>
+                  <Image src={life.img} alt='' layout="fill" />
                 </figure>
               );
             })}
           </div>
           <Link href="#">
-            <a className="bg-[#7D06D8] px-4 py-1 rounded-full capitalize text-xl font-bold">
+            <a className="bg-[#7D06D8] px-4 py-1 rounded-full capitalize text-xl font-bold" target='_blank'>
               load more
             </a>
           </Link>

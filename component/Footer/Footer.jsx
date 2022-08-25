@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { RiMailFill, RiPhoneFill } from 'react-icons/ri';
+import { MdMail } from 'react-icons/md';
+import { BsFillTelephoneFill } from 'react-icons/bs';
 
 import style from './Footer.module.css'
 
@@ -42,7 +43,7 @@ export default function Footer() {
               <h4>get in touch</h4>
               <div className={style.connect}>
                 <div className={style.bgIcon}>
-                  <RiMailFill size={18} color="#E09E00" />
+                  <MdMail color="#E09E00" />
                 </div>
                 <Link href="mailto:hello@berosetudio.com">
                   <a>hello@berosetudio.com</a>
@@ -50,7 +51,7 @@ export default function Footer() {
               </div>
               <div className={style.connect}>
                 <div className={style.bgIcon}>
-                  <RiPhoneFill size={18} color="#E09E00" />
+                  <BsFillTelephoneFill color="#E09E00" />
                 </div>
                 <Link href="https://wa.me/085600963500">
                   <a target='_blank'>0856 0096 3500</a>

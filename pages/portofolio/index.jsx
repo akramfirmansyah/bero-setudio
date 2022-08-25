@@ -12,10 +12,10 @@ function AllJournals({ dataAllWorks }) {
   return (
     <div>
       {/* Navbar Top */}
-      <Navlogo class="fixed top-6 left-[10%] z-50" />
+      <Navlogo class="fixed top-6 left-[5%] z-50" />
 
       {/* Navbar Bottom */}
-      <Navbottom class="fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]" />
+      <Navbottom class="fixed bottom-6 right-[5%] z-50 flex flex-col justify-between h-[90px]" />
 
       {/* Content */}
       {dataAllWorks.data.map((work) => {

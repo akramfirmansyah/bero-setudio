@@ -45,7 +45,7 @@ const JournalsContent = ({ dataJournalsContent, dataJournals })=> {
         <Navlogo class="fixed top-6 left-[10%] z-50" />
 
         {/* Navbar Bottom */}
-        <Navbottom class="fixed bottom-6 right-[10%] z-50 flex flex-col justify-between h-[90px]" />
+        <Navbottom class="fixed bottom-6 w-[90%] z-50 flex flex-col justify-between h-[90px]" />
         {/* Banner */}
         <figure className="relative w-full h-[70vh]">
           <Image src={JournalsContent.thumbnail} alt='' layout="fill" objectFit="cover" />
@@ -53,7 +53,7 @@ const JournalsContent = ({ dataJournalsContent, dataJournals })=> {
 
         {/* Jurnal Content */}
         <main className="w-full flex justify-center text-white">
-          <div className="w-4/5 border-b mb-10">
+          <div className="w-[90%] border-b mb-10">
             <div className="w-full mt-12 border-b mb-8">
               <h3 className="font-bold text-6xl mb-6 capitalize">{JournalsContent.title}</h3>
               <p className=" font-semibold text-lg italic mb-4">

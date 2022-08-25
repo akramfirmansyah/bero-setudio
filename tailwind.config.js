@@ -17,7 +17,6 @@ module.exports = {
       },
       boxShadow: {
         'nav': '0 5px 12px #E09E004D',
-
       },
     },
   },
