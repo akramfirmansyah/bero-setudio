@@ -1,16 +1,21 @@
 import Image from "next/image";
 import Link from "next/link";
+import Head from 'next/head'
 import axios from "axios";
 
 // Component
 import Navlogo from "../../component/Navlogo/Navlogo";
 import Navbottom from "../../component/Navbottom/Navbottom";
 import Footer from "../../component/Footer/Footer";
+import Pagination from "../../component/Pagination/Pagination";
 
-function AllJournals({ dataAllWorks }) {
-  console.log(dataAllWorks.data);
+function AllJournals({ dataAllWorks, slug }) {
   return (
     <div>
+      <Head>
+        <title>Work - Bero Setudio</title>
+      </Head>
+
       {/* Navbar Top */}
       <Navlogo class="fixed top-6 left-[5%] z-50" />
 
@@ -20,7 +25,7 @@ function AllJournals({ dataAllWorks }) {
       {/* Content */}
       {dataAllWorks.data.map((work) => {
         return (
-          <div className=" relative w-full h-[400px]" key={work.id}>
+          <div className="relative w-full h-[400px]" key={work.id}>
             <figure className="absolute w-full h-full overflow-hidden">
               <Image src={work.banner} alt="" layout="fill" />
             </figure>
@@ -31,8 +36,8 @@ function AllJournals({ dataAllWorks }) {
               </p>
               <Link
                 href={{
-                  pathname: "/portofolio/[slugportofolio]",
-                  query: { slugportofolio: work.slug },
+                  pathname: "/works/[slugworks]",
+                  query: { slugworks: work.slug },
                 }}
                 passHref
               >
@@ -47,19 +52,23 @@ function AllJournals({ dataAllWorks }) {
         );
       })}
 
+      {/* Navigation */}
+      <Pagination data={dataAllWorks} slug={slug} />
+
       {/* Footer */}
       <Footer />
     </div>
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
   const BASEURL = process.env.BASEURL;
-
-  const getAllWorks = await axios.get(BASEURL + "/works");
+  let slug = context.query;
+  slug = (slug.page === undefined) ? '1': slug.page
+  const getAllWorks = await axios.get(BASEURL + "/works?page=" + slug );
   const dataAllWorks = getAllWorks.data;
   return {
-    props: { dataAllWorks },
+    props: { dataAllWorks, slug },
   };
 }
 

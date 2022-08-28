@@ -10,17 +10,19 @@ import Footer from "../../component/Footer/Footer";
 
 // Image
 import bgJurnal from "../../public/Jurnal/SupergrafisJournal.png";
+import { MdNextPlan } from "react-icons/md";
 
+function nextPage() {
+  alert('dataJournals')
+}
 
 function Jurnal({ dataJournals }) {
-
   return (
     <div className=" relative bg-jurnal z-[1]">
-
       <Head>
         <title>Jurnal</title>
       </Head>
-      
+
       {/* Navbar Top */}
       <Navlogo class="fixed top-6 left-[5%] z-50" />
 
@@ -31,7 +33,7 @@ function Jurnal({ dataJournals }) {
       <div className=" absolute h-screen w-full overflow-hidden -z-[1]">
         <Image
           src={bgJurnal}
-          alt=''
+          alt=""
           layout="fill"
           objectFit="cover"
           quality={100}
@@ -48,12 +50,12 @@ function Jurnal({ dataJournals }) {
             journals
           </h2>
           <ul className="w-full flex flex-wrap justify-between">
-            {dataJournals.data.reverse().map((journal) => (
+            {dataJournals.data.map((journal) => (
               <JurnalList
                 key={journal.id}
                 slug={journal.slug}
                 title={journal.title}
-                datePublish={'May 15, 2022'}
+                datePublish={"May 15, 2022"}
                 thumbnail={journal.thumbnail}
                 writer={journal.writer}
               />
@@ -61,7 +63,9 @@ function Jurnal({ dataJournals }) {
           </ul>
         </div>
       </div>
-
+      <button onClick={nextPage}>
+        <MdNextPlan color="#fff" size={24} />
+      </button>
       {/* Footer */}
       <Footer />
     </div>
@@ -69,16 +73,16 @@ function Jurnal({ dataJournals }) {
 }
 
 export async function getServerSideProps(context) {
-  const BASEURL = process.env.BASEURL
+  const BASEURL = process.env.BASEURL;
 
-  const getJournal = await axios.get(BASEURL+'/journals')
-  const dataJournals = await getJournal.data
-  
+  const getJournal = await axios.get(BASEURL + "/journals");
+  const dataJournals = await getJournal.data;
+
   return {
     props: {
-      dataJournals
+      dataJournals,
     },
-  }
+  };
 }
 
-export default Jurnal
+export default Jurnal;

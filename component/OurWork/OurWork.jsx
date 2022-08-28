@@ -9,8 +9,8 @@ const OurWork = (props) => {
       {props.work.data.map((work) => {
         return (
           <Link href={{
-            pathname: '/portofolio/[slugportofolio]',
-            query: { slugportofolio: work.slug }
+            pathname: '/works/[slugworks]',
+            query: { slugworks: work.slug }
           }} key={work.id} passHref>
               <a className={style.owimage}>
                 <div className={style.zoomin}>

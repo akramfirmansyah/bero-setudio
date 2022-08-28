@@ -350,10 +350,9 @@ export default function Home({ dataTeams, dataWorks }) {
           <h2 className="w-full text-4xl uppercase pb-[30px] mb-[40px] border-b-[1px] border-[#4E2C7D]">
             our <span className="font-bold">work</span>
           </h2>
-          {/* <OurWork thumnail={thumnail} /> */}
           <OurWork work={dataWorks} />
           <div className="flex justify-center items-center capitalize text-white my-[50px]">
-            <Link href="/portofolio">
+            <Link href="/works?page=1">
               <a className="text-xl font-bold rounded-full px-[30px] py-[5px] bg-[#7d06d8] transition-all hover:bg-primary">
                 see more
               </a>
