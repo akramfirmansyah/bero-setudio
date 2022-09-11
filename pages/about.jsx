@@ -142,9 +142,9 @@ export default function About() {
 
       {/* Setudio Life */}
       <div className="bg-[#1D1D1D] flex justify-center items-center">
-        <div className="my-16 w-[90%] flex flex-col items-center justify-center text-white">
+        <div className="my-12 w-[90%] flex flex-col items-center justify-center text-white">
           <h3 className="font-black text-4xl mb-10">Setudio Life</h3>
-          <div className="w-full flex justify-center flex-wrap mb-8">
+          <div className="w-full flex justify-center flex-wrap mb-10">
             {lifes.map((life) => {
               return (
                 <figure className="w-1/4 aspect-square relative" key={life.id}>
@@ -154,7 +154,7 @@ export default function About() {
             })}
           </div>
           <Link href="#">
-            <a className="bg-[#7D06D8] px-4 py-1 rounded-full capitalize text-xl font-bold" target='_blank'>
+            <a className="bg-[#7D06D8] px-4 py-1 rounded-full capitalize text-xl font-bold">
               load more
             </a>
           </Link>

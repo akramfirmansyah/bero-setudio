@@ -6,6 +6,7 @@ import axios from "axios";
 import Navlogo from "../../component/Navlogo/Navlogo";
 import Navbottom from "../../component/Navbottom/Navbottom";
 import JurnalList from "../../component/JurnalList/JurnalList";
+import Pagination from "../../component/Pagination/Pagination";
 import Footer from "../../component/Footer/Footer";
 
 // Image
@@ -62,10 +63,7 @@ function Jurnal({ dataJournals }) {
             ))}
           </ul>
         </div>
-      </div>
-      <button onClick={nextPage}>
-        <MdNextPlan color="#fff" size={24} />
-      </button>
+      </div>      
       {/* Footer */}
       <Footer />
     </div>

@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Head from 'next/head'
 import { useRouter } from "next/router";
 import ReactPlayer from "react-player";
 import axios from "axios";
 
 // Icon
-import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 // Component
 import ReactPaginate from "react-paginate";
@@ -17,7 +18,7 @@ function WorksContent({ dataWorkContent }) {
   const router = useRouter();
 
   // Content component
-  const Content = ()=> {
+  const Content = () => {
     if (Object.keys(workContent.contents).length !== 0) {
       <div>
         {workContent.contents.map((content) => {
@@ -41,13 +42,11 @@ function WorksContent({ dataWorkContent }) {
             </div>
           );
         })}
-      </div>
+      </div>;
     } else {
-      return(
-        <></>
-      )
+      return <></>;
     }
-  }
+  };
 
   // Prev Button Handler
   const prevPageHandler = () => {
@@ -66,10 +65,10 @@ function WorksContent({ dataWorkContent }) {
         <button
           id="btn-prev"
           onClick={prevPageHandler}
-          className="flex justify-center items-center border px-3 py-2 rounded-tl-md rounded-tr-xl rounded-br-md rounded-bl-xl hover:bg-second hover:text-white"
+          className="flex justify-center items-center px-3 py-2 group"
         >
-          <MdNavigateBefore size={24} />
-          {workContent.prev_work.title}
+          <FaArrowLeft size={32} />
+          <span className="ml-2 text-2xl font-bold ease-in-out duration-300 group-hover:ml-4">{workContent.prev_work.title}</span>
         </button>
       );
     } else {
@@ -84,10 +83,10 @@ function WorksContent({ dataWorkContent }) {
         <button
           id="btn-next"
           onClick={nextPageHandler}
-          className="flex justify-center items-center border px-3 py-2 rounded-tl-md rounded-tr-xl rounded-br-md rounded-bl-xl hover:bg-second hover:text-white"
+          className="flex justify-center items-center px-3 py-2 group"
         >
-          {workContent.next_work.title}
-          <MdNavigateNext size={24} />
+          <span className="mr-2 text-2xl font-bold ease-in-out duration-300 group-hover:mr-4">{workContent.next_work.title}</span>
+          <FaArrowRight size={32} />
         </button>
       );
     } else {
@@ -97,6 +96,10 @@ function WorksContent({ dataWorkContent }) {
 
   return (
     <div key={workContent.id}>
+      <Head>
+        <title>{workContent.title} - Bero Setudio</title>
+      </Head>
+
       {/* Navbar Top */}
       <Navlogo class="fixed top-6 left-[5%] z-50" />
 
@@ -104,24 +107,22 @@ function WorksContent({ dataWorkContent }) {
       <Navbottom class="fixed bottom-6 right-[5%] z-50 flex flex-col justify-between h-[90px]" />
 
       {/* Hero */}
-      <div className="h-[80vh] w-full bg-hdportofolio flex justify-center items-center text-white">
-        <div className=" w-4/5">
+      <div className="w-full bg-hdportofolio flex justify-center items-center text-white">
+        <div className="w-[90%] mt-24 mb-12">
           <div className="border-b pb-4 mb-8">
-            <figure className="relative h-[100px]">
-              <Image src={workContent.logo} alt="" layout="fill" />
-            </figure>
+            <Image src={workContent.logo} alt="logo" width={200} height={80} />
           </div>
           <h3 className="uppercase font-black text-2xl mb-4">Project Info</h3>
-          <div className="flex justify-between">
+          <div className="flex justify-between gap-4">
             {/* Project */}
             <div className="w-1/2">
               <h6 className="uppercase text-lg font-bold">
                 {workContent.project_title}
               </h6>
-              <p className=" text-sm">{workContent.project_description}</p>
+              <p className="text-sm">{workContent.project_description}</p>
             </div>
 
-            <div className="w-1/2 flex">
+            <div className="w-1/2 flex gap-4">
               {/* Teams */}
               <div className="w-1/2 uppercase">
                 {workContent.teams.map((team) => {

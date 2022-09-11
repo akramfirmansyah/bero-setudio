@@ -30,7 +30,7 @@ const scrollToTop = () => {
 };
 
 // Video YT
-const urlYT = "https://www.youtube.com/watch?v=8qbQgAUkLwk";
+const urlYT = "https://www.youtube.com/watch?v=vPnQb2oJ2-Q";
 
 // Image
 // import Supergrafis from "../public/SupergrafisHome.png";
@@ -351,7 +351,7 @@ export default function Home({ dataTeams, dataWorks }) {
             our <span className="font-bold">work</span>
           </h2>
           <OurWork work={dataWorks} />
-          <div className="flex justify-center items-center capitalize text-white my-[50px]">
+          <div className="flex justify-center items-center capitalize text-white my-12">
             <Link href="/works?page=1">
               <a className="text-xl font-bold rounded-full px-[30px] py-[5px] bg-[#7d06d8] transition-all hover:bg-primary">
                 see more
@@ -359,7 +359,7 @@ export default function Home({ dataTeams, dataWorks }) {
             </Link>
           </div>
 
-          <div className="relative flex justify-center items-center w-full h-[40px] mb-[20px]">
+          <div className="relative flex justify-center items-center w-full mb-[20px]">
             <div className="absolute bg-[#4e2c7d] w-full h-[1px]"></div>
             <h5 className="inline-block text-center px-[40px] bg-white z-[1]">
               www.<span className="font-bold">berosetudio</span>.com

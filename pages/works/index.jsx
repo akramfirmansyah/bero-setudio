@@ -7,7 +7,6 @@ import axios from "axios";
 import Navlogo from "../../component/Navlogo/Navlogo";
 import Navbottom from "../../component/Navbottom/Navbottom";
 import Footer from "../../component/Footer/Footer";
-import Pagination from "../../component/Pagination/Pagination";
 
 function AllJournals({ dataAllWorks, slug }) {
   return (
@@ -51,9 +50,6 @@ function AllJournals({ dataAllWorks, slug }) {
           </div>
         );
       })}
-
-      {/* Navigation */}
-      <Pagination data={dataAllWorks} slug={slug} />
 
       {/* Footer */}
       <Footer />
