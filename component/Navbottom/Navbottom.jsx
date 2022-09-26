@@ -2,8 +2,8 @@
 import Link from 'next/link'
 
 // Icon
-import { AiFillHome } from 'react-icons/ai'
 import { IoIosArrowUp } from 'react-icons/io'
+import { MdHome } from 'react-icons/md'
 
 // Function to Top Page
 function topFunc() {
@@ -13,16 +13,17 @@ function topFunc() {
     });
 }
 
-export default function Navbottom(props) {
+export default function Navbottom() {
     return (
-        <div className={props.class}>
-            <button className="bg-white h-[40px] aspect-square rounded-full flex justify-center items-center drop-shadow-icon cursor-pointer" onClick={topFunc} >
+        <div className="fixed bottom-6 right-[5%] z-50 flex flex-col justify-between">
+        {/* <div> */}
+            <button className="bg-white h-12 aspect-square rounded-full flex justify-center items-center drop-shadow-icon cursor-pointer mb-3" onClick={topFunc} >
                 <IoIosArrowUp color='#E09E00' size={32} />
             </button>
-            <button className="bg-white h-[40px] aspect-square rounded-full flex justify-center items-center drop-shadow-icon">
+            <button className="bg-white h-12 aspect-square rounded-full flex justify-center items-center drop-shadow-icon cursor-pointer">
                 <Link href="/" passHref>
                     <a>
-                        <AiFillHome color='#E09E00' size={32} />
+                        <MdHome color='#E09E00' size={32} />
                     </a>
                 </Link>
             </button>

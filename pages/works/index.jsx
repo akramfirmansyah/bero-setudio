@@ -16,10 +16,10 @@ function AllJournals({ dataAllWorks, slug }) {
       </Head>
 
       {/* Navbar Top */}
-      <Navlogo class="fixed top-6 left-[5%] z-50" />
+      <Navlogo />
 
       {/* Navbar Bottom */}
-      <Navbottom class="fixed bottom-6 right-[5%] z-50 flex flex-col justify-between h-[90px]" />
+      <Navbottom />
 
       {/* Content */}
       {dataAllWorks.data.map((work) => {

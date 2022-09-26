@@ -78,6 +78,7 @@ export default function Home({ dataTeams, dataWorks }) {
                 >
                   <Image
                     src={logo}
+                    alt="logo"
                     quality={100}
                     height={65}
                     width={148}
