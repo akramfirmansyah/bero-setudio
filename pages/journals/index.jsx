@@ -28,7 +28,7 @@ function Jurnal({ dataJournals }) {
       <Navlogo class="fixed top-6 left-[5%] z-50" />
 
       {/* Navbar Bottom */}
-      <Navbottom />
+      <Navbottom class="fixed bottom-[5%] right-[5%] z-50 flex flex-col justify-between" />
 
       {/* Background */}
       <div className=" absolute h-screen w-full overflow-hidden -z-[1]">

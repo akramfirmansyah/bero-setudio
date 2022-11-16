@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 
 // Icon
 import { AiFillEye, AiFillRocket } from "react-icons/ai";
@@ -46,7 +46,7 @@ const lifes = [
 // Component
 import Navlogo from "../component/Navlogo/Navlogo";
 import Navbottom from "../component/Navbottom/Navbottom";
-import Footer from "../component/Footer/footer";
+import Footer from "../component/Footer/Footer"
 
 export default function About() {
   return (
@@ -77,13 +77,13 @@ export default function About() {
               </p>
             </div>
             <div className="w-5/12 aspect-video">
-              <ReactPlayer 
-                url={urlYT} 
-                volume={0.5}
-                loop={true} 
-                width='100%' 
-                height='100%'
-              />
+            <ReactPlayer
+              url={urlYT}
+              volume={0.5}
+              loop={true}
+              width="100%"
+              height="100%"
+            />
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function About() {
         <Navlogo class="fixed top-6 left-[5%] z-50" />
 
         {/* Navbar Bottom */}
-        <Navbottom />
+        <Navbottom class="fixed bottom-[5%] right-[5%] z-50 flex flex-col justify-between" />
         
       </div>
 

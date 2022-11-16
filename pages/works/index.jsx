@@ -19,7 +19,7 @@ function AllJournals({ dataAllWorks, slug }) {
       <Navlogo />
 
       {/* Navbar Bottom */}
-      <Navbottom />
+      <Navbottom class="fixed bottom-[5%] right-[5%] z-50 flex flex-col justify-between" />
 
       {/* Content */}
       {dataAllWorks.data.map((work) => {

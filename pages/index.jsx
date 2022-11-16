@@ -191,7 +191,7 @@ export default function Home({ dataTeams, dataWorks }) {
       {/* End Hero */}
 
       {/* About Us */}
-      <div className="w-full h-20 text-[#616161] flex justify-center items-center text-center">
+      <div className="w-full h-24 text-[#616161] flex justify-center items-center text-center">
         <p>
           We are creative house based on Bandung,
           <br />
@@ -377,7 +377,7 @@ export default function Home({ dataTeams, dataWorks }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const BASEURL = process.env.BASEURL;
 
   const getTeams = await axios.get(BASEURL + "/teams");

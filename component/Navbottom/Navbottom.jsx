@@ -13,9 +13,9 @@ function topFunc() {
     });
 }
 
-export default function Navbottom() {
+export default function Navbottom(props) {
     return (
-        <div className="fixed bottom-6 right-[5%] z-50 flex flex-col justify-between">
+        <div className={props.class}>
         {/* <div> */}
             <button className="bg-white h-12 aspect-square rounded-full flex justify-center items-center drop-shadow-icon cursor-pointer mb-3" onClick={topFunc} >
                 <IoIosArrowUp color='#E09E00' size={32} />

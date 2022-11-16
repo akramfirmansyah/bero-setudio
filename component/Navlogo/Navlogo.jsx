@@ -11,7 +11,7 @@ export default function Navlogo() {
   const [logo, setLogo] = useState(White);
 
   return (
-    <div class="fixed top-6 left-[5%] z-50">
+    <div className="fixed top-6 left-[5%] z-50">
       <Link href="/">
         <a onMouseEnter={() => setLogo(Color)} onMouseLeave={() => setLogo(White)}>
           <Image src={logo} quality={100} height={65} width={148} id="logo" />

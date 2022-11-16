@@ -24,7 +24,7 @@ function WorksContent({ dataWorkContent }) {
         {workContent.contents.map((content) => {
           if (content.type === "video") {
             return (
-              <div className="aspect-video w-full">
+              <div key={content.id} className="aspect-video w-full">
                 <ReactPlayer
                   url={content.content}
                   volume={0.5}
